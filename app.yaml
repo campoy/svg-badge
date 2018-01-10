@@ -1,0 +1,9 @@
+runtime: go
+api_version: go1
+
+handlers:
+- url: /
+  static_files: index.html
+  upload: index.html
+- url: /badge/.*
+  script: _go_app
