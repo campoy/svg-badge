@@ -1,3 +1,5 @@
+![experimental](https://svg-badge.appspot.com/badge/stability/experimental)
+
 # svg-badge
 
 Have you ever needed to create SVG badges for your GitHub repositories?
