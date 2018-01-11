@@ -1,4 +1,4 @@
-![experimental](https://svg-badge.appspot.com/badge/stability/experimental)
+![experimental](https://svg-badge.appspot.com/badge/stability/experimental?c)
 
 # svg-badge
 
@@ -14,6 +14,6 @@ Try it!
 
 The image below use `stability`, `stable`, and color `3a3`
 
-[![stable](https://svg-badge.appspot.com/badge/stability/stable?color=3a3)](https://svg-badge.appspot.com/badge/stability/stable?color=3a3)
+[![stable](https://svg-badge.appspot.com/badge/stability/stable?color=3a3)](https://svg-badge.appspot.com/badge/stability/stable?color=3a3&c)
 
 The application runs on Google App Engine.
