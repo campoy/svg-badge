@@ -35,7 +35,6 @@ func badgeHandler(w http.ResponseWriter, r *http.Request) {
 
 	const (
 		height    = 20
-		shadow    = 2
 		padding   = 10
 		charWidth = 8
 		radius    = 2
@@ -46,7 +45,7 @@ func badgeHandler(w http.ResponseWriter, r *http.Request) {
 	width := 4*padding + kindWidth + labelWidth
 
 	s := svg.New(w)
-	s.Start(width+shadow, height+shadow)
+	s.Start(width, height)
 	s.Style("text/css", `
 		text {
 			alignment-baseline: middle;
@@ -55,10 +54,14 @@ func badgeHandler(w http.ResponseWriter, r *http.Request) {
 			fill: white;
 			text-shadow: 1px 1px #666
 		}`)
-
-	s.Roundrect(shadow, shadow, width, height, radius, radius, "fill:#aaa")
+	s.LinearGradient("gradient", 0, 0, 0, 255, []svg.Offcolor{
+		{Offset: 0, Color: "#000", Opacity: 0},
+		{Offset: 122, Color: "#000", Opacity: 0.5},
+		{Offset: 255, Color: "#000", Opacity: 1},
+	})
 	s.Roundrect(0, 0, width, height, radius, radius, "fill:#333")
 	s.Roundrect(2*padding+kindWidth, 0, 2*padding+labelWidth, height, radius, radius, "fill:#"+color)
+	s.Roundrect(0, 0, width, height, radius, radius, "fill:url(#gradient)")
 	s.Text(padding, height/2, kind)
 	s.Text(3*padding+kindWidth, height/2, label)
 	s.End()
