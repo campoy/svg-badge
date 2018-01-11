@@ -38,6 +38,7 @@ func badgeHandler(w http.ResponseWriter, r *http.Request) {
 		shadow    = 2
 		padding   = 10
 		charWidth = 8
+		radius    = 2
 	)
 
 	kindWidth := charWidth * len(kind)
@@ -55,9 +56,9 @@ func badgeHandler(w http.ResponseWriter, r *http.Request) {
 			text-shadow: 1px 1px #666
 		}`)
 
-	s.Rect(shadow, shadow, width, height, "fill:#aaa")
-	s.Rect(0, 0, 2*padding+kindWidth, height, "fill:#333")
-	s.Rect(2*padding+kindWidth, 0, 2*padding+labelWidth, height, "fill:#"+color)
+	s.Roundrect(shadow, shadow, width, height, radius, radius, "fill:#aaa")
+	s.Roundrect(0, 0, width, height, radius, radius, "fill:#333")
+	s.Roundrect(2*padding+kindWidth, 0, 2*padding+labelWidth, height, radius, radius, "fill:#"+color)
 	s.Text(padding, height/2, kind)
 	s.Text(3*padding+kindWidth, height/2, label)
 	s.End()
