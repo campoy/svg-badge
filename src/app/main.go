@@ -59,7 +59,7 @@ func badgeHandler(w http.ResponseWriter, r *http.Request) {
 	})
 	s.Roundrect(0, 0, width, height, radius, radius, "fill:#666")
 	s.Roundrect(padding+kindWidth, 0, 3*padding+labelWidth, height, radius, radius, "fill:#"+color)
-	s.Rect(padding+kindWidth, 0, 10, height, "fill:#"+color)
+	s.Rect(padding+kindWidth, 0, 10, height, "fill:#666")
 	s.Roundrect(0, 0, width, height, radius, radius, "fill:url(#gradient)")
 	s.Text(padding, 14, kind)
 	s.Text(3*padding+kindWidth, 14, label)
