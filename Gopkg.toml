@@ -26,13 +26,13 @@
   name = "github.com/ajstarks/svgo"
 
 [[constraint]]
+  branch = "master"
+  name = "github.com/golang/freetype"
+
+[[constraint]]
   name = "github.com/gorilla/mux"
   version = "1.6.0"
 
 [[constraint]]
-  name = "github.com/golang/freetype"
   branch = "master"
-
-[[constraint]]
   name = "golang.org/x/image"
-  branch = "master"
