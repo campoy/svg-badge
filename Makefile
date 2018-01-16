@@ -1,5 +1,5 @@
 serve:
-	GOPATH=$(CURDIR) dev_appserver.py src/app
+	dev_appserver.py gae
 
 deploy: copy-deps really-deploy rm-deps
 
