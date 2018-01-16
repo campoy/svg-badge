@@ -64,12 +64,9 @@ func (m *Maker) New(left, right, color string, fontSize float64, height int) ([]
 	s := svg.New(buf)
 	s.Start(width, height)
 
-	var textStyle = fmt.Sprintf(`
-		text {
-			font-family: %s,Verdana,Geneva,sans-serif;
-			font-size: %dpx;
-			fill: white;
-		}`, m.fontName, int(fontSize))
+	var textStyle = fmt.Sprintf(
+		`text { font-family: %s,Verdana,Geneva,sans-serif; font-size: %dpx; fill: white; }`,
+		m.fontName, int(fontSize))
 
 	s.Style("text/css", textStyle)
 	s.LinearGradient("gradient", 0, 0, 0, 255, []svg.Offcolor{
